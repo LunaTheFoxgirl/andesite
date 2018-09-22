@@ -1,0 +1,14 @@
+.dub
+docs.json
+__dummy.html
+docs/
+andesite.so
+andesite.dylib
+andesite.dll
+andesite.a
+andesite.lib
+andesite-test-*
+*.exe
+*.o
+*.obj
+*.lst
