@@ -16,7 +16,7 @@ private:
 	Label subtitleLabel;
 
 	void delegateHandlerActivated(Button b) {
-		int index = cast(int)(children.length-1);
+		int index = cast(int)children.countUntil(b);
 		if (activated !is null)
 			activated(null, new WelcomeActivatedEventArgs(index));
 	}
