@@ -110,13 +110,13 @@ public:
 	}
 
 	int append(string iconName, string optionText, string descriptionText) {
-		Image image = new Image(cast(GtkImage*)null);
+		Image image = new Image();
 		image.setFromIconName(iconName, IconSize.DIALOG);
 		return appendWithImage(image, optionText, descriptionText);
 	}
 
 	int appendWithPixbuf(Pixbuf img, string optionText, string descriptionText) {
-		Image image = new Image(cast(GtkImage*)null);
+		Image image = new Image();
 		image.setFromPixbuf(img);
 		return appendWithImage(image, optionText, descriptionText);
 	}
