@@ -48,12 +48,12 @@ public:
 		this.getStyleContext.addClass(STYLE_CLASS_VIEW);
 		this.getStyleContext.addClass(StyleClass.Welcome);
 
-		titleLabel = new Label(cast(GtkLabel*)null);
+		titleLabel = new Label("");
 		titleLabel.setJustify(Justification.CENTER);
 		titleLabel.setHexpand(true);
 		titleLabel.getStyleContext.addClass(StyleClass.H1Label);
 
-		subtitleLabel = new Label(cast(GtkLabel*)null);
+		subtitleLabel = new Label("");
 		subtitleLabel.setJustify(Justification.CENTER);
 		subtitleLabel.setHexpand(true);
 		subtitleLabel.setLineWrap(true);
@@ -83,6 +83,9 @@ public:
 		content.add(options);
 
 		this.add(content);
+
+		this.title = title;
+		this.subtitle = subtitle;
 	}
 
 	void setItemVisible(uint index, bool val) {

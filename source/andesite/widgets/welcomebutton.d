@@ -46,12 +46,12 @@ public:
 	}
 
 	this(Image image, string optionText, string descriptionText) {
-		buttonTitle = new Label(cast(GtkLabel*)null);
+		buttonTitle = new Label("");
 		buttonTitle.getStyleContext.addClass(StyleClass.H3Label);
 		buttonTitle.setHalign(Align.START);
 		buttonTitle.setValign(Align.END);
 
-		buttonDescription = new Label(cast(GtkLabel*)null);
+		buttonDescription = new Label("");
 		buttonDescription.setHalign(Align.START);
 		buttonDescription.setValign(Align.START);
 		buttonDescription.setLineWrap(true);
@@ -60,11 +60,15 @@ public:
 
 		this.getStyleContext.addClass(STYLE_CLASS_FLAT);
 
-		buttonGrid = new Grid(cast(GtkGrid*)null);
+		buttonGrid = new Grid();
 		buttonGrid.setColumnSpacing(12);
 
 		buttonGrid.attach(buttonTitle, 1, 0, 1, 1);
 		buttonGrid.attach(buttonDescription, 1, 1, 1, 1);
 		this.add(buttonGrid);
+
+		title = optionText;
+		description = descriptionText;
+		icon = image;
 	}
 }
