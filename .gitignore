@@ -12,3 +12,4 @@ andesite-test-*
 *.o
 *.obj
 *.lst
+libandesite.a
