@@ -8,5 +8,5 @@
 	},
 	"description": "Library to make applications that feel native to Elementary OS in D.",
 	"copyright": "Copyright © 2018, Clipsey",
-	"license": "GPLv2"
+	"license": "LGPLv3"
 }
