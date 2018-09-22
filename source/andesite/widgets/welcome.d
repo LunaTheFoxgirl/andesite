@@ -126,7 +126,13 @@ public:
 		button.addOnClicked(&this.delegateHandlerActivated);
 
 		return cast(int)children.length-1;
+	}
+
+	WelcomeButton getButtonFromIndex(int index) {
+		if (index >= 0 && index < children.length)
+			return cast(WelcomeButton)children[index];
 		
+		return null;
 	}
 }
 
