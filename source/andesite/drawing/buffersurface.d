@@ -81,7 +81,7 @@ public:
 	void clear() {
 		context_.save();
 
-		context_.setSourceRgba(0, 0, 0 ,0);
+		context_.setSourceRgba(0, 0, 0, 0);
 		context_.setOperator(CairoOperator.SOURCE);
 		context_.paint();
 

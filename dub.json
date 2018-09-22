@@ -4,7 +4,8 @@
 		"Clipsey"
 	],
 	"dependencies": {
-		"gtk-d": "~>3.8.3"
+		"gtk-d": "~>3.8.3",
+		"sharpevents": "~>1.0.2"
 	},
 	"description": "Library to make applications that feel native to Elementary OS in D.",
 	"copyright": "Copyright © 2018, Clipsey",
