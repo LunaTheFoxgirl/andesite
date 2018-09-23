@@ -271,12 +271,18 @@ public:
 	}
 }
 
+struct GtkFillRound {
+	GtkWidgetClass parentClass;
+}
+
 public class FillRound : Widget {
-private:
-	//mixin ImplementClass!GtkWidget;
 public:
+	this(GtkWidget* widget) {
+		super(widget);
+	}
+
 	this() {
-		super(cast(GtkWidget*)g_object_newv(getType(), 0, null), true);
+		super(null);
 		setHasWindow(false);
 		getStyleContext.addClass("fill-block");
 		setHexpand(true);
