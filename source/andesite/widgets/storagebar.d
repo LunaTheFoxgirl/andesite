@@ -142,7 +142,7 @@ public:
 			ItemDescription.Video,
 			ItemDescription.Photo,
 			ItemDescription.App];
-		seq.sort!("a.stringof < b.stringof");
+		seq.sort;
 
 		foreach (description; seq) {
 			auto fillBlock = new FillBlock(description, 0);
