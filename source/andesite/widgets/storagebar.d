@@ -14,6 +14,8 @@ import glib.Util;
 import glib.Internationalization;
 import std.xml;
 import std.stdio;
+import gtkd.Implement;
+import gobject.c.functions : g_object_newv;
 
 
 public enum ItemDescription {
@@ -29,6 +31,8 @@ public class StorageBar : Box {
 private:
 	ulong storage_ = 0;
 	ulong totalUsage_ = 0;
+
+	mixin ImplementClass!GtkBox;
 
 	Label descriptionLabel;
 	FillBlock[int] blocks;
@@ -90,7 +94,7 @@ public:
 	}
 
 	this(ulong storage, ulong totalUsage = 0) {
-		super(null);
+		super(cast(GtkBox*)g_object_newv(getType(), 0, null), true);
 		setOrientation(Orientation.VERTICAL);
 		
 		descriptionLabel = new Label("");
@@ -268,9 +272,11 @@ public:
 }
 
 public class FillRound : Widget {
+private:
+	//mixin ImplementClass!GtkWidget;
 public:
 	this() {
-		super(null);
+		super(cast(GtkWidget*)g_object_newv(getType(), 0, null), true);
 		setHasWindow(false);
 		getStyleContext.addClass("fill-block");
 		setHexpand(true);
